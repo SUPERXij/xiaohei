@@ -18,6 +18,7 @@ while True:
     # 人脸框架
     for (x, y, w, h) in faces:
         cv2.rectangle(imgResult, (x, y), (x + w, y + h), (0, 0, 255), 2)
+        cv2.putText(imgResult, "HUMAN?", (x+int(w/4), y-5), cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (255, 0, 0), 2)
     cv2.imshow("faceid", imgResult)
     if cv2.waitKey(1) & 0xFF == ord("q"):
         break
